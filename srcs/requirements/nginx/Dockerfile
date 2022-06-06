@@ -6,12 +6,17 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 14:24:39 by ahernand          #+#    #+#              #
-#    Updated: 2022/06/06 15:25:23 by ahernand         ###   ########.fr        #
+#    Updated: 2022/06/06 20:41:28 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM debian:buster
 
-RUN apt-get update
+RUN apt-get -y update
+RUN apt-get -y upgrade
 
-CMD [ "echo", "think positive" ]
+RUN apt -y install nginx
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]
