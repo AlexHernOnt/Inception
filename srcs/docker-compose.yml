@@ -27,16 +27,18 @@ services:
       - "443:80"
 
 
-
-
   db:
-  
+    build:
+      context: . 
+      dockerfile: ./requirements/mariadb/Dockerfile
+    container_name: my_mariadb
+    restart: always
 
-    #volumes:
-    #  - nx_data:???
-
-#volumes:
-  #data: {}
+    environment:
+      MARIADB_ROOT_PASSWORD: 123456
+      MARIADB_DATABASE: test_db
+      MARIADB_USER: alex
+      MARIADB_PASSWORD: 123
 
 
 
