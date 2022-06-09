@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    docker-compose.yml                                 :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 15:26:11 by ahernand          #+#    #+#              #
-#    Updated: 2022/06/07 15:26:13 by ahernand         ###   ########.fr        #
+#    Updated: 2022/06/09 16:06:46 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ services:
       context: . 
       dockerfile: ./requirements/mariadb/Dockerfile
     container_name: my_mariadb
+    
+    image: my_mariadb
     restart: always
 
     environment:
