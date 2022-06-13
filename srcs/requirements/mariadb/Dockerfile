@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:14:16 by ahernand          #+#    #+#              #
-#    Updated: 2022/06/13 14:54:12 by ahernand         ###   ########.fr        #
+#    Updated: 2022/06/13 20:10:01 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,4 +18,7 @@ RUN			apt-get update && apt-get install -y \
 			
 EXPOSE		3306
 
-ENTRYPOINT ["mysqld_safe"]
+COPY		./requirements/mariadb/cmd.sh .
+COPY		./requirements/mariadb/make_db.sql .
+
+CMD ["bash", "cmd.sh"]
