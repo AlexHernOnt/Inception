@@ -34,7 +34,7 @@ services:
     container_name: my_mariadb
     
     image: my_mariadb
-    restart: always
+    #restart: always
 
     environment:
       MARIADB_ROOT_PASSWORD: 123456
