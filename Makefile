@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 17:52:30 by ahernand          #+#    #+#              #
-#    Updated: 2022/06/06 19:38:44 by ahernand         ###   ########.fr        #
+#    Updated: 2022/06/14 15:08:07 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,10 @@ $(NAME) :
 
 
 fclean:
-	yes	|	docker system prune -a	|	sleep 0
-	yes	|	docker image prune		|	sleep 0
+	@echo "\033[0;36mCleaning ...\033[0m";
+	@docker container	rm -f $$(docker container ls -aq)	> /dev/null 2>&1;	\
+	@docker image		rm -f $$(docker image ls -aq)		> /dev/null 2>&1;	\
+	@docker volume		rm -f $$(docker volume ls -q)		> /dev/null 2>&1;	\
+	@docker network		rm    $$(docker network ls -q)		> /dev/null 2>&1; echo "\n\033[0;32mAll cleaned :)\033[0m";
 
 re: fclean all

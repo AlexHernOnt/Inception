@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:14:16 by ahernand          #+#    #+#              #
-#    Updated: 2022/06/13 20:10:01 by ahernand         ###   ########.fr        #
+#    Updated: 2022/06/14 17:30:44 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ RUN			apt-get update && apt-get install -y \
 			
 EXPOSE		3306
 
-COPY		./requirements/mariadb/cmd.sh .
-COPY		./requirements/mariadb/make_db.sql .
+COPY		./requirements/mariadb/tools/cmd.sh .
 
 CMD ["bash", "cmd.sh"]
