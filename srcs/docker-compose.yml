@@ -38,27 +38,27 @@ services:
     env_file:
       - .env
 
-    build:
-      context: .
-      dockerfile: ./requirements/mariadb/Dockerfile
+    #build:
+    #  context: .
+    #  dockerfile: ./requirements/mariadb/Dockerfile
 
-    container_name: mariadb
+    #container_name: mariadb
 
     image: mariadb
 
     restart: always
 
     volumes:
-      - v_db:/var/lib/mysql
+      - /Users/ahernand/Downloads/volume_mariadb:/var/lib/mysql
 
 
-volumes:
-  v_db:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /Users/ahernand/Downloads/volume_mariadb
+#volumes:
+#  v_db:
+#    driver: local
+#    driver_opts:
+#      type: 'none'
+#      o: 'bind'
+#      device: './Users/ahernand/Downloads/volume_mariadb'
 
 
 
@@ -150,10 +150,28 @@ volumes:
 
 
 
+#Motores Gráficos y Plugins
+#3D Avanzado: Personajes y Escenarios
+#RAC (Reconocimiento Académico de Créditos)
+#Programación Gráfica
+#Dirección de Arte
+#Concept Art: Personajes, Escenarios y Props
+#Animación 3D Avanzada
+#Trabajo Fin de Grado
+#Postproducción Digital
+#Gestión empresarial de proyectos de videojuegos
+#Middleware: Herramientas de Desarrollo	
 
 
 
-
+#​​Tecnologías de Desarrollo de Videojuegos y Entornos Virtuales III
+#Trabajo Fin de Grado  
+#Postproducción Digital y Efectos Especiales 
+#Gestión Empresarial de Proyectos de Videojuegos 
+#Mención Diseño  
+#Estadística y Probabilidad: Diseño basado en Análisis de Datos
+#Experiencia de Usuario: Diseño UI/UX 
+#Diseño de Economías en Videojuegos
 
 
 

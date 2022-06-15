@@ -8,4 +8,4 @@ EOF
 
 service mysql stop
 
-mysqld_safe
+mysqld_safe 

@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 20:14:16 by ahernand          #+#    #+#              #
-#    Updated: 2022/06/14 17:30:44 by ahernand         ###   ########.fr        #
+#    Updated: 2022/06/15 20:07:22 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,4 +20,4 @@ EXPOSE		3306
 
 COPY		./requirements/mariadb/tools/cmd.sh .
 
-CMD ["bash", "cmd.sh"]
+CMD			["bash", "cmd.sh"]
