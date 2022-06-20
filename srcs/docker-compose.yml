@@ -59,6 +59,9 @@ services:
     depends_on:
       - db
 
+    ports:
+      - "9000:9000"
+
     env_file:
       - .env
 
@@ -72,6 +75,7 @@ services:
     restart: always
     volumes:
       - v_wp:/var/www/html
+      - v_db:/var/lib/mysql
 
 
 

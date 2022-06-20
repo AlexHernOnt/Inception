@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 14:24:39 by ahernand          #+#    #+#              #
-#    Updated: 2022/06/17 20:16:39 by ahernand         ###   ########.fr        #
+#    Updated: 2022/06/20 17:27:27 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,9 @@ RUN			apt-get -y upgrade
 
 RUN			apt -y install nginx
 
-#EXPOSE 80 80
+EXPOSE		9000
 
-COPY		./requirements/nginx/conf/nginx.conf /etc/nginx/nginx.conf
+COPY		./requirements/nginx/conf/nginx.conf	/etc/nginx/nginx.conf
+COPY		./requirements/nginx/conf/default		/etc/nginx/sites-available/default
 
 CMD			["nginx", "-g", "daemon off;"]
