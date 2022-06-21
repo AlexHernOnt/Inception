@@ -10,127 +10,135 @@
 #                                                                              #
 # **************************************************************************** #
 
-version: "3.9"
+
+#version: "3.9"
+
+#services:
+
+#  # ______ Nginx ________ #
+
+#  nginx:
+
+#    build:
+#      context: . 
+#      dockerfile: ./requirements/nginx/Dockerfile
+
+#    container_name: nginx
+
+#    image: nginx
+
+#    ports:
+#      - "443:80"
+
+#    volumes:
+#      - v_wp:/var/www/html
+
+
+
+#  # ______ MariaDB ______ #
+
+#  db:
+#    env_file:
+#      - .env
+
+#    build:
+#      context: .
+#      dockerfile: ./requirements/mariadb/Dockerfile
+
+#    container_name: mariadb
+
+#    image: mariadb
+#    restart: always
+#    volumes:
+#      - v_db:/var/lib/mysql
+
+
+
+
+#  # ______ Wordpress ______ #
+
+#  wordpress:
+
+#    depends_on:
+#      - db
+
+#    ports:
+#      - "9000:9000"
+
+#    env_file:
+#      - .env
+
+#    build:
+#      context: .
+#      dockerfile: ./requirements/wordpress/Dockerfile
+
+#    container_name: wordpress
+
+#    image: wordpress
+#    restart: always
+#    volumes:
+#      - v_wp:/var/www/html
+#      #- v_db:/var/lib/mysql
+
+
+
+
+#volumes:
+#  v_wp: {}
+#  v_db: {}
+##    #driver_opts:
+##    #o: bind
+##    #type: none
+##    #device: /Users/ahernand/Downloads/volume_mariadb
+
+
+
+
+###networks:
+###  my_network: {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+version: '3'
 
 services:
 
-  # ______ Nginx ________ #
-
-  nginx:
-
-    build:
-      context: . 
-      dockerfile: ./requirements/nginx/Dockerfile
-
-    container_name: nginx
-
-    image: nginx
-
-    ports:
-      - "443:80"
-
-
-
-
-  # ______ MariaDB ______ #
-
-  db:
-    env_file:
-      - .env
-
-    build:
-      context: .
-      dockerfile: ./requirements/mariadb/Dockerfile
-
-    container_name: mariadb
-
+  mysql:
     image: mariadb
-    restart: always
+
     volumes:
-      - v_db:/var/lib/mysql
+      - /Users/ahernand/Inception:/var/lib/mysql
 
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql_root_pass
+      MYSQL_DATABASE: db_name
+      MYSQL_USER: user_name
+      MYSQL_PASSWORD: user_pass
 
-
-
-  # ______ Wordpress ______ #
-
-  wordpress:
-
-    depends_on:
-      - db
-
-    ports:
-      - "9000:9000"
-
-    env_file:
-      - .env
-
-    build:
-      context: .
-      dockerfile: ./requirements/wordpress/Dockerfile
-
-    container_name: wordpress
-
-    image: wordpress
     restart: always
-    volumes:
-      - v_wp:/var/www/html
-      - v_db:/var/lib/mysql
-
-
-
-
-volumes:
-  v_wp: {}
-  v_db: {}
-#    #driver_opts:
-#    #o: bind
-#    #type: none
-#    #device: /Users/ahernand/Downloads/volume_mariadb
-
-
-
-
-##networks:
-##  my_network: {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
