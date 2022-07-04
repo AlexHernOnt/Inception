@@ -76,7 +76,7 @@ services:
 
     env_file:
       - .env
-
+ 
     build:
       context: .
       dockerfile: ./requirements/wordpress/Dockerfile
@@ -87,7 +87,7 @@ services:
     restart: always
     volumes:
       - v_wp:/var/www/html
-      #- v_db:/var/lib/mysql
+      - v_db:/var/lib/mysql
 
     networks:
       - my_network
@@ -479,4 +479,4 @@ networks:
 
 #volumes:
 #  db_data: {}
-  wordpress_data: {}
+#  wordpress_data: {}
