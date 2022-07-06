@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 19:50:14 by ahernand          #+#    #+#              #
-#    Updated: 2022/07/04 15:57:45 by ahernand         ###   ########.fr        #
+#    Updated: 2022/07/06 16:25:16 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,10 @@ COPY 		/requirements/wordpress/conf/wp-config.php wordpress
 
 COPY 		/requirements/wordpress/conf/index.html wordpress
 
-#RUN			rm			index.html
-RUN				chmod		777 wordpress/*
-#RUN			mv			index.html wordpress/index.html
+RUN			chmod		-R 777 wordpress
+RUN			chown		-R www-data:www-data wordpress
+RUN			mv			wordpress/* .
 
 
-CMD			["bash", "wordpress_start.sh"]
+#CMD			["bash", "wordpress_start.sh"]
+CMD			["tail", "-f"]
