@@ -41,7 +41,7 @@ server {
 	root /var/www/html;
 
 	# Add index.php to the list if you are using PHP
-	index index.html readme.html index.php index.htm index.nginx-debian.html;
+	index index.php readme.html index.html index.htm index.nginx-debian.html;
 
 	server_name localhost;
 
@@ -87,7 +87,7 @@ server {
     autoindex on;
 
 	location / {
-    	autoindex on;
+		autoindex on;
 		try_files $uri $uri/ =404;
 	}
 }

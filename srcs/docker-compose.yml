@@ -43,23 +43,23 @@ services:
 
   # ______ MariaDB ______ #
 
-  #db:
-  #  env_file:
-  #    - .env
+  db:
+    env_file:
+      - .env
 
-  #  build:
-  #    context: .
-  #    dockerfile: ./requirements/mariadb/Dockerfile
+    build:
+      context: .
+      dockerfile: ./requirements/mariadb/Dockerfile
 
-  #  container_name: mariadb
+    container_name: mariadb
 
-  #  image: mariadb
-  #  restart: always
-  #  volumes:
-  #    - v_db:/var/lib/mysql
+    image: mariadb
+    restart: always
+    volumes:
+      - v_db:/var/lib/mysql
 
-  #  networks:
-  #    - my_network
+    networks:
+      - my_network
 
 
 
@@ -67,8 +67,8 @@ services:
   # ______ Wordpress ______ #
 
   wordpress:
-    #depends_on:
-      #- db
+    depends_on:
+      - db
 
     ports:
       - "9000:9000"
@@ -86,14 +86,14 @@ services:
     restart: always
     volumes:
       - v_wp:/var/www/html
-      #- v_db:/var/lib/mysql
+      - v_db:/var/lib/mysql
 
     networks:
       - my_network
 
 volumes:
   v_wp: {}
-  #v_db: {}
+  v_db: {}
 #    #driver_opts:
 #    #o: bind
 #    #type: none
@@ -101,164 +101,6 @@ volumes:
 
 networks:
   my_network: {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
