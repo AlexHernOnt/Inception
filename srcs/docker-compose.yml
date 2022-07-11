@@ -26,7 +26,6 @@ services:
       dockerfile: ./requirements/nginx/Dockerfile
 
     container_name: nginx
-
     image: nginx
 
     ports:
@@ -52,9 +51,10 @@ services:
       dockerfile: ./requirements/mariadb/Dockerfile
 
     container_name: mariadb
-
     image: mariadb
+
     restart: always
+
     volumes:
       - v_db:/var/lib/mysql
 
@@ -70,9 +70,6 @@ services:
     depends_on:
       - db
 
-    ports:
-      - "9000:9000"
-
     env_file:
       - .env
 
@@ -81,9 +78,13 @@ services:
       dockerfile: ./requirements/wordpress/Dockerfile
 
     container_name: wordpress
-
     image: wordpress
+
     restart: always
+
+    ports:
+      - "9000:9000"
+
     volumes:
       - v_wp:/var/www/html
       - v_db:/var/lib/mysql

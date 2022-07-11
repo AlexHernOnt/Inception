@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 14:24:39 by ahernand          #+#    #+#              #
-#    Updated: 2022/07/07 16:59:45 by ahernand         ###   ########.fr        #
+#    Updated: 2022/07/11 17:23:20 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,10 @@ RUN			apt-get -y										update
 RUN			apt-get -y										upgrade
 
 RUN			apt -y install									nginx
-RUN			apt -y install									vim php-mysql php-fpm mariadb-server
 
 EXPOSE		9000
 
-COPY		./requirements/nginx/conf/nginx.conf			/etc/nginx/nginx.conf
+#COPY		./requirements/nginx/conf/nginx.conf			/etc/nginx/nginx.conf
 COPY		./requirements/nginx/conf/default				/etc/nginx/sites-available/default
-COPY		./requirements/nginx/conf/default				/etc/nginx/sites-available/default
 
-COPY		./requirements/nginx/tools/cmd.sh				.
-
-CMD			["bash", "cmd.sh"]
-
-#CMD		["nginx", "-g", "daemon off;"]
+CMD			["nginx", "-g", "daemon off;"]
