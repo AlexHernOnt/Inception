@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 19:50:14 by ahernand          #+#    #+#              #
-#    Updated: 2022/07/11 17:11:09 by ahernand         ###   ########.fr        #
+#    Updated: 2022/07/12 18:03:01 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,4 +38,4 @@ RUN			mkdir					/run/php/
 
 COPY		./requirements/wordpress/conf/www.conf									/etc/php/7.3/fpm/pool.d
 
-CMD			/usr/sbin/php-fpm7.3 -F
+CMD			["php-fpm7.3", "-F"]
