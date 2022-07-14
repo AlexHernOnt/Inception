@@ -92,7 +92,6 @@ services:
 
     volumes:
       - v_wp:/var/www/html
-      - v_db:/var/lib/mysql
 
     networks:
       - my_network
