@@ -42,7 +42,7 @@ server {
 
 	index index.php readme.html index.html index.htm index.nginx-debian.html;
 
-	server_name _;
+	server_name localhost;
 
 
 
