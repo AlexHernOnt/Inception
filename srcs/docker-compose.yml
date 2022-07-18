@@ -31,7 +31,7 @@ services:
     restart: unless-stopped
 
     ports:
-      - "443:80"
+      - "443:443"
 
     volumes:
       - v_wp:/var/www/html
