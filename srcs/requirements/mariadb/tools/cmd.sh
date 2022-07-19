@@ -10,7 +10,4 @@ mysql --user=root --password=123456 << EOF
 	shutdown;
 EOF
 
-
-#service mysql stop
-
 mysqld_safe 

@@ -14,21 +14,15 @@ version: "3.9"
 
 services:
 
-  # ______ Nginx ________ #
-
   nginx:
-
     depends_on:
       - wordpress
 
     build:
       context: . 
       dockerfile: ./requirements/nginx/Dockerfile
-
     container_name: nginx
     image: nginx
-
-    restart: unless-stopped
 
     ports:
       - "443:443"
@@ -39,10 +33,8 @@ services:
     networks:
       - my_network
 
+    restart: unless-stopped
 
-
-
-  # ______ MariaDB ______ #
 
   db:
     env_file:
@@ -51,14 +43,8 @@ services:
     build:
       context: .
       dockerfile: ./requirements/mariadb/Dockerfile
-
     container_name: mariadb
     image: mariadb
-
-    restart: unless-stopped
-
-    ports:
-      - "3306:3306"
 
     volumes:
       - v_db:/var/lib/mysql
@@ -66,10 +52,8 @@ services:
     networks:
       - my_network
 
+    restart: unless-stopped
 
-
-
-  # ______ Wordpress ______ #
 
   wordpress:
     depends_on:
@@ -81,14 +65,8 @@ services:
     build:
       context: .
       dockerfile: ./requirements/wordpress/Dockerfile
-
     container_name: wordpress
     image: wordpress
-
-    restart: unless-stopped
-
-    ports:
-      - "9000:9000"
 
     volumes:
       - v_wp:/var/www/html
@@ -96,16 +74,15 @@ services:
     networks:
       - my_network
 
+    restart: unless-stopped
+
 volumes:
   v_wp: {}
   v_db: {}
-#    #driver_opts:
-#    #o: bind
-#    #type: none
-#    #device: /Users/ahernand/Downloads/volume_mariadb
 
 networks:
-  my_network: {}
+  my_network:
+    name: my_network
 
 
 

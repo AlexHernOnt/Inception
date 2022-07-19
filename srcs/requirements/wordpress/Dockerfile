@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 19:50:14 by ahernand          #+#    #+#              #
-#    Updated: 2022/07/15 17:26:23 by ahernand         ###   ########.fr        #
+#    Updated: 2022/07/19 17:30:08 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,4 @@ RUN			mv wp-cli.phar											/usr/local/bin/wp-cli
 
 COPY		./requirements/wordpress/conf/run.sh					.	
 
-EXPOSE		9000
-
 CMD			["bash", "run.sh"]
-
-#CMD		["php-fpm7.3", "-F"]
