@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 17:52:30 by ahernand          #+#    #+#              #
-#    Updated: 2022/07/21 14:57:01 by ahernand         ###   ########.fr        #
+#    Updated: 2022/07/21 16:58:18 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ all: $(NAME)
 
 $(NAME) :
 	#echo "127.0.0.1 ahernand.42.fr" >> /etc/hosts
-	#mkdir /home/ahernand
-	#mkdir /home/ahernand/mariadb
-	#mkdir /home/ahernand/wordpress
+	#mkdir -d /home/ahernand
+	#mkdir -d /home/ahernand/mariadb
+	#mkdir -d /home/ahernand/wordpress
 	cd srcs && docker-compose up
 
 
