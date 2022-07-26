@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 19:50:14 by ahernand          #+#    #+#              #
-#    Updated: 2022/07/21 14:03:41 by ahernand         ###   ########.fr        #
+#    Updated: 2022/07/26 16:21:27 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ FROM		debian:buster
 
 RUN			apt-get -y												update
 RUN			apt-get -y												upgrade
-RUN			apt -y													install	wget php-mysql php-fpm mariadb-server curl vim
+RUN			apt -y													install	php-mysql php-fpm curl wget vim
 
 
 
@@ -43,6 +43,6 @@ RUN			curl -O													https://raw.githubusercontent.com/wp-cli/builds/gh-pag
 RUN			chmod +x												wp-cli.phar
 RUN			mv wp-cli.phar											/usr/local/bin/wp-cli
 
-COPY		./requirements/wordpress/conf/run.sh					.	
+COPY		./requirements/wordpress/conf/cmd.sh					.	
 
-CMD			["bash", "run.sh"]
+CMD			["bash", "cmd.sh"]
