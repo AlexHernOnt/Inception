@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 17:52:30 by ahernand          #+#    #+#              #
-#    Updated: 2022/07/27 15:01:14 by ahernand         ###   ########.fr        #
+#    Updated: 2022/07/27 15:19:55 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,11 @@ NAME = Inception
 all: $(NAME) 
 
 $(NAME) :
-	#echo "127.0.0.1 ahernand.42.fr" >> /etc/hosts
-	#mkdir -p /home/ahernand
-	#mkdir -p /home/ahernand/data
-	#mkdir -p /home/ahernand/data/mariadb
-	#mkdir -p /home/ahernand/data/wordpress
+	echo "127.0.0.1 ahernand.42.fr" >> /etc/hosts
+	mkdir -p /home/ahernand
+	mkdir -p /home/ahernand/data
+	mkdir -p /home/ahernand/data/mariadb
+	mkdir -p /home/ahernand/data/wordpress
 	cd srcs && docker-compose up
 
 
