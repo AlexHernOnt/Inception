@@ -6,7 +6,7 @@
 #    By: ahernand <ahernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 19:50:14 by ahernand          #+#    #+#              #
-#    Updated: 2022/07/26 16:21:27 by ahernand         ###   ########.fr        #
+#    Updated: 2022/07/28 14:13:06 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,5 +44,7 @@ RUN			chmod +x												wp-cli.phar
 RUN			mv wp-cli.phar											/usr/local/bin/wp-cli
 
 COPY		./requirements/wordpress/conf/cmd.sh					.	
+
+EXPOSE		9000	
 
 CMD			["bash", "cmd.sh"]
